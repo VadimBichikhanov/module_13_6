@@ -28,8 +28,9 @@ class Form(StatesGroup):
     weight = State()
 
 # Класс для обработки состояний и логики расчета калорий
-class CalorieCalculator:
+class CalorieCalculator(Form):
     def __init__(self, state: FSMContext):
+        super().__init__()
         self.state = state
 
     async def set_gender(self, call: CallbackQuery):
